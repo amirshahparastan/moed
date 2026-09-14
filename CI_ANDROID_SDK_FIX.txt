@@ -1,0 +1,6 @@
+Moed CI Android SDK fix
+
+- android-actions/setup-android updated from v3 to v4.
+- Android API 36, Build Tools 36.0.0 and platform-tools are installed directly by setup-android.
+- Applies to both test APK workflow and signed APK/AAB workflow.
+- No application source, version, UI, icon, or user data behavior was changed.
