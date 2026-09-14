@@ -10,7 +10,7 @@ class NotificationService {
   final _plugin = FlutterLocalNotificationsPlugin();
   Future<void> init() async {
     tzdata.initializeTimeZones();
-    try { final info = await FlutterTimezone.getLocalTimezone(); tz.setLocalLocation(tz.getLocation(info.name)); } catch (_) {}
+    try { final info = await FlutterTimezone.getLocalTimezone(); tz.setLocalLocation(tz.getLocation(info.identifier)); } catch (_) {}
     const android = AndroidInitializationSettings('@mipmap/ic_launcher');
     await _plugin.initialize(settings: const InitializationSettings(android: android));
   }

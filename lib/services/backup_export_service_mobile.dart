@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:file_picker/file_picker.dart';
-import 'package:cross_file/cross_file.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -25,7 +25,7 @@ class BackupExportService {
   }
 
   Future<bool> restoreBackup() async {
-    final r = await FilePicker.platform.pickFiles(type: FileType.custom, allowedExtensions: ['json']);
+    final r = await FilePicker.pickFiles(type: FileType.custom, allowedExtensions: ['json']);
     if (r == null || r.files.single.path == null) return false;
     final raw = await File(r.files.single.path!).readAsString();
     final data = jsonDecode(raw) as Map<String,dynamic>;
@@ -49,7 +49,7 @@ class BackupExportService {
     await SharePlus.instance.share(ShareParams(text:'گزارش ${loan.title}',files:[XFile(f.path)]));
   }
 
-  Future<List<int>> _renderPersianReport(Loan loan,List<Installment> items) async {
+  Future<Uint8List> _renderPersianReport(Loan loan,List<Installment> items) async {
     const w=1240.0,h=1754.0; final recorder=ui.PictureRecorder(); final canvas=Canvas(recorder); canvas.drawColor(const Color(0xFFF4F8FF), BlendMode.src);
     void txt(String s,double y,{double size=34,FontWeight weight=FontWeight.w500,Color color=const Color(0xFF13233E)}){
       final p=ui.ParagraphBuilder(ui.ParagraphStyle(textDirection:TextDirection.rtl,textAlign:TextAlign.right,fontSize:size,fontWeight:weight,fontFamily:'Vazirmatn'))..pushStyle(ui.TextStyle(color:color))..addText(s);
