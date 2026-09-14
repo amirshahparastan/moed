@@ -1,0 +1,7 @@
+Moed V1.1 - Clean first run
+
+No demo/sample loans, installments or payments are inserted automatically.
+A fresh installation starts with an empty financial database.
+The user creates all financial data manually.
+
+This applies to Android and Web preview builds.

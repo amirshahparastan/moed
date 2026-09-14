@@ -1,0 +1,51 @@
+name: moed
+description: "موعد - مدیریت هوشمند اقساط و فشار مالی"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: ^6.1.5+1
+  google_fonts: ^8.2.1
+  sqflite: ^2.4.2+1
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  shared_preferences: ^2.5.5
+  shamsi_date: ^1.1.1
+  flutter_local_notifications: ^22.3.0
+  timezone: ^0.11.1
+  flutter_timezone: ^5.1.0
+  local_auth: ^3.0.2
+  file_picker: ^11.0.3
+  share_plus: ^12.0.1
+  cross_file: ^0.3.5+5
+  pdf: ^3.13.0
+  url_launcher: ^6.3.2
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon/app_icon.png
+    - assets/icon/app_icon_foreground.png
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/icon/app_icon.png
+  adaptive_icon_background: "#EDF4FF"
+  adaptive_icon_foreground: assets/icon/app_icon_foreground.png
+  min_sdk_android: 24
