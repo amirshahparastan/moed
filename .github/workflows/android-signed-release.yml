@@ -50,10 +50,6 @@ jobs:
           echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > android/app/upload-keystore.jks
 
       - name: Configure release signing
-        env:
-          ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
-          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
-          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -79,7 +75,14 @@ jobs:
           PY
 
       - name: Build signed APK and AAB
+        env:
+          ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
         run: |
+          test -n "$ANDROID_STORE_PASSWORD"
+          test -n "$ANDROID_KEY_PASSWORD"
+          test -n "$ANDROID_KEY_ALIAS"
           flutter build apk --release
           flutter build appbundle --release
 

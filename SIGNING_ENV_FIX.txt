@@ -1,0 +1,1 @@
+Fix: signing secrets are now exported during the actual Flutter/Gradle build step, so System.getenv() can read storePassword, keyPassword, and keyAlias.
