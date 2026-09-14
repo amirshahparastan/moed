@@ -22,7 +22,7 @@ dependencies:
   timezone: ^0.11.1
   flutter_timezone: ^5.1.0
   local_auth: ^3.0.2
-  file_picker: ^11.0.3
+  file_picker: 10.3.8
   share_plus: ^12.0.1
   cross_file: ^0.3.5+5
   pdf: ^3.13.0

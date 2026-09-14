@@ -25,7 +25,7 @@ class BackupExportService {
   }
 
   Future<bool> restoreBackup() async {
-    final r = await FilePicker.pickFiles(type: FileType.custom, allowedExtensions: ['json']);
+    final r = await FilePicker.platform.pickFiles(type: FileType.custom, allowedExtensions: ['json']);
     if (r == null || r.files.single.path == null) return false;
     final raw = await File(r.files.single.path!).readAsString();
     final data = jsonDecode(raw) as Map<String,dynamic>;

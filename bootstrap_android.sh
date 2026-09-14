@@ -32,4 +32,6 @@ dart run flutter_launcher_icons
 echo "✅ پروژه Android آماده شد"
 echo "APK تست: flutter build apk --release"
 echo "اجرا با کابل/ADB: flutter run"
+
+# Remove Flutter template test; Moed does not expose MyApp.
 rm -f test/widget_test.dart

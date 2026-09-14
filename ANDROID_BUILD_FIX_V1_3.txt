@@ -1,0 +1,6 @@
+Moed Android CI build fix v1.3
+- file_picker pinned to 10.3.8
+- mobile backup picker adapted to FilePicker.platform.pickFiles
+- preserves local_auth and timezone compatibility fixes
+- removes generated Flutter template widget test during bootstrap
+- no demo financial data
