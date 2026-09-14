@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/foundation.dart';
 import '../core/utils/formatters.dart';
 import '../data/app_database.dart';
@@ -25,10 +26,29 @@ class AppStore extends ChangeNotifier {
       await settingsService.save(settings);
     }
 
-    await notifications.init();
     await refresh(reschedule:false);
     ready=true;
     notifyListeners();
+
+    // Notification/timezone initialization can be slow on some Android devices.
+    // Never block first paint of the app on it.
+    unawaited(_initNotificationsInBackground());
+  }
+
+  Future<void> _initNotificationsInBackground() async {
+    try {
+      await notifications.init();
+      await notifications.reschedule(
+        loans: loans,
+        installments: installments,
+        enabled: settings.remindersEnabled,
+        overdueFollowup: settings.overdueFollowup,
+        reminderDays: settings.reminderDays,
+        hour: settings.reminderHour,
+      );
+    } catch (_) {
+      // The app must remain usable even if notification initialization fails.
+    }
   }
 
   Future<void> refresh({bool reschedule=true}) async { loans=await db.loans(); installments=await db.installments(); if(reschedule) await notifications.reschedule(loans:loans,installments:installments,enabled:settings.remindersEnabled,overdueFollowup:settings.overdueFollowup,reminderDays:settings.reminderDays,hour:settings.reminderHour); notifyListeners(); }
@@ -55,24 +75,40 @@ class AppStore extends ChangeNotifier {
   List<Installment> installmentsFor(int loanId)=>installments.where((e)=>e.loanId==loanId).toList();
 
   Future<void> setSettings(AppSettings value) async {
+    final previous = settings;
     final safeValue = value.onboarded && value.userName.trim().isEmpty
         ? value.copyWith(userName: settings.userName.trim())
         : value;
+
+    // Apply UI settings first. Theme changes should feel instant.
     settings = safeValue;
+    notifyListeners();
     await settingsService.save(safeValue);
 
-    // تغییر تنظیمات نباید دیتابیس را دوباره بارگذاری کند یا کل درخت برنامه را
-    // در میانه‌ی بسته شدن Dialog/Route بازسازی کند. فقط اعلان‌ها را با داده‌های
-    // فعلی دوباره زمان‌بندی می‌کنیم و یک بار UI را خبر می‌کنیم.
-    await notifications.reschedule(
-      loans: loans,
-      installments: installments,
-      enabled: safeValue.remindersEnabled,
-      overdueFollowup: safeValue.overdueFollowup,
-      reminderDays: safeValue.reminderDays,
-      hour: safeValue.reminderHour,
-    );
+    final reminderConfigChanged =
+        previous.remindersEnabled != safeValue.remindersEnabled ||
+        previous.overdueFollowup != safeValue.overdueFollowup ||
+        previous.reminderHour != safeValue.reminderHour ||
+        !listEquals(previous.reminderDays, safeValue.reminderDays);
+
+    if (reminderConfigChanged) {
+      unawaited(notifications.reschedule(
+        loans: loans,
+        installments: installments,
+        enabled: safeValue.remindersEnabled,
+        overdueFollowup: safeValue.overdueFollowup,
+        reminderDays: safeValue.reminderDays,
+        hour: safeValue.reminderHour,
+      ));
+    }
+  }
+
+  Future<void> setThemeMode(String mode) async {
+    if (settings.themeMode == mode) return;
+    final next = settings.copyWith(themeMode: mode);
+    settings = next;
     notifyListeners();
+    await settingsService.save(next);
   }
   Future<void> completeOnboarding(String name) async {
     final value = name.trim();

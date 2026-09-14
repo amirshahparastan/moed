@@ -74,7 +74,7 @@ class _HomeShellState extends State<HomeShell> {
                 maxLines: 1,
                 overflow: TextOverflow.fade,
                 style: TextStyle(
-                  fontSize: 9,
+                  fontSize: 12,
                   fontWeight: active ? FontWeight.w900 : FontWeight.w500,
                   color: active ? AppColors.blue : AppColors.muted,
                 ),

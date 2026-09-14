@@ -126,7 +126,7 @@ class _SmartToolsPageState extends State<SmartToolsPage> {
                       nextMilestone == 100
                           ? 'هدف بعدی: تسویه کامل همه تعهدها.'
                           : 'هدف بعدی: رسیدن به ${toPersianDigits(nextMilestone)}٪ پرداخت کل.',
-                      style: const TextStyle(fontSize: 10, color: AppColors.muted),
+                      style: const TextStyle(fontSize: 12, color: AppColors.muted),
                     ),
                   ],
                 ),
@@ -139,7 +139,7 @@ class _SmartToolsPageState extends State<SmartToolsPage> {
               const SizedBox(height: 7),
               const Text(
                 'ببین اگر هر ماه مبلغ بیشتری برای اقساط کنار بگذاری، به‌صورت تخمینی چند ماه زودتر از بدهی خارج می‌شوی.',
-                style: TextStyle(fontSize: 10, color: AppColors.muted, height: 1.7),
+                style: TextStyle(fontSize: 12, color: AppColors.muted, height: 1.7),
               ),
               const SizedBox(height: 10),
               TextField(
@@ -178,7 +178,7 @@ class _SmartToolsPageState extends State<SmartToolsPage> {
               const SizedBox(height: 8),
               const Text(
                 'این محاسبه یک سناریوی مدیریتی بر اساس داده‌های ثبت‌شده است و سود، جریمه یا قواعد تسویه بانک را محاسبه نمی‌کند.',
-                style: TextStyle(fontSize: 8, color: AppColors.muted, height: 1.7),
+                style: TextStyle(fontSize: 12, color: AppColors.muted, height: 1.7),
               ),
             ],
           ),
@@ -192,7 +192,7 @@ class _SmartToolsPageState extends State<SmartToolsPage> {
         child: Row(
           children: [
             Expanded(
-              child: Text(title, style: const TextStyle(color: AppColors.muted, fontSize: 10)),
+              child: Text(title, style: const TextStyle(color: AppColors.muted, fontSize: 12)),
             ),
             Text(
               value,

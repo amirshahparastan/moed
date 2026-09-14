@@ -147,7 +147,7 @@ class _AddLoanPageState extends State<AddLoanPage> {
                               const Text(
                                 'تاریخ اولین سررسید',
                                 style: TextStyle(
-                                  fontSize: 10,
+                                  fontSize: 12,
                                   color: AppColors.muted,
                                 ),
                               ),
@@ -196,7 +196,7 @@ class _AddLoanPageState extends State<AddLoanPage> {
                       ),
                       subtitle: const Text(
                         'قبل از سررسید به من یادآوری کن',
-                        style: TextStyle(fontSize: 9),
+                        style: TextStyle(fontSize: 12),
                       ),
                       onChanged: (v) => setState(() => reminder = v),
                     ),
@@ -256,7 +256,7 @@ class _AddLoanPageState extends State<AddLoanPage> {
                   child: Text(
                     value,
                     style: TextStyle(
-                      fontSize: 8,
+                      fontSize: 12,
                       fontWeight: FontWeight.w800,
                       color: type == value
                           ? AppColors.blue

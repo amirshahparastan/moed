@@ -104,7 +104,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
                   Text(
                     loan.lender,
                     style: const TextStyle(
-                      fontSize: 10,
+                      fontSize: 12,
                       color: AppColors.muted,
                     ),
                   ),
@@ -128,7 +128,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
                             const Text(
                               'پرداخت شده',
                               style: TextStyle(
-                                fontSize: 9,
+                                fontSize: 12,
                                 color: AppColors.muted,
                               ),
                             ),
@@ -162,7 +162,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
                           Expanded(
                             child: Text(
                               'قسط بعدی ${relativeDue(next.dueDate)} (${jalaliDate(next.dueDate)})',
-                              style: const TextStyle(fontSize: 10),
+                              style: const TextStyle(fontSize: 12),
                             ),
                           ),
                         ],
@@ -258,7 +258,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
             const SizedBox(height: 3),
             Text(
               label,
-              style: const TextStyle(fontSize: 8, color: AppColors.muted),
+              style: const TextStyle(fontSize: 12, color: AppColors.muted),
             ),
           ],
         ),
@@ -308,7 +308,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
                     Text(
                       jalaliDate(i.dueDate),
                       style: const TextStyle(
-                        fontSize: 9,
+                        fontSize: 12,
                         color: AppColors.muted,
                       ),
                     ),
@@ -321,7 +321,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
                   Text(
                     money(i.amount),
                     style: const TextStyle(
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
@@ -329,7 +329,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
                     const Text(
                       'پرداخت شده',
                       style: TextStyle(
-                        fontSize: 9,
+                        fontSize: 12,
                         color: AppColors.success,
                       ),
                     )
@@ -392,7 +392,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
                     Text(
                       toPersianDigits(i.sequence),
                       style: const TextStyle(
-                        fontSize: 8,
+                        fontSize: 12,
                         color: AppColors.muted,
                       ),
                     ),
@@ -458,7 +458,7 @@ class _LoanDetailPageState extends State<LoanDetailPage> {
               const SizedBox(height: 6),
               Text(
                 'مبلغ بین اقساط پرداخت‌نشده از نزدیک‌ترین سررسید تقسیم می‌شود. مانده فعلی: ${money(remainingDebt)}',
-                style: const TextStyle(fontSize: 10, color: AppColors.muted, height: 1.7),
+                style: const TextStyle(fontSize: 12, color: AppColors.muted, height: 1.7),
               ),
               const SizedBox(height: 12),
               TextField(

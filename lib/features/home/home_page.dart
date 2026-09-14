@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
                           'مدیریت هوشمند اقساط و سررسیدها',
                           style: TextStyle(
                             color: AppColors.muted,
-                            fontSize: 10,
+                            fontSize: 12,
                           ),
                         ),
                       ],
@@ -173,7 +173,7 @@ class HomePage extends StatelessWidget {
                                     nextLoan.title,
                                     style: TextStyle(
                                       color: nextCardMuted,
-                                      fontSize: 11,
+                                      fontSize: 12,
                                     ),
                                   ),
                                   const SizedBox(height: 5),
@@ -183,7 +183,7 @@ class HomePage extends StatelessWidget {
                                       color: next.isOverdue
                                           ? AppColors.danger
                                           : nextCardMuted,
-                                      fontSize: 9,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ],
@@ -255,7 +255,7 @@ class HomePage extends StatelessWidget {
                           const SizedBox(height: 3),
                           Text(
                             '${toPersianDigits(store.dueNext30Days.length)} قسط • ${compactMoney(store.dueNext30Amount)}',
-                            style: const TextStyle(fontSize: 9, color: AppColors.muted),
+                            style: const TextStyle(fontSize: 12, color: AppColors.muted),
                           ),
                         ],
                       ),
@@ -337,7 +337,7 @@ class HomePage extends StatelessWidget {
                             analytics.insights.first,
                             style: const TextStyle(
                               color: Color(0xFF657694),
-                              fontSize: 10,
+                              fontSize: 12,
                               height: 1.7,
                             ),
                           ),
@@ -372,7 +372,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               label,
-              style: const TextStyle(fontSize: 9, color: AppColors.muted),
+              style: const TextStyle(fontSize: 12, color: AppColors.muted),
             ),
           ],
         ),
@@ -428,7 +428,7 @@ class HomePage extends StatelessWidget {
                       ? 'تسویه شده'
                       : relativeDue(next.dueDate),
                   style: TextStyle(
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight: FontWeight.w800,
                     color: next?.isOverdue == true
                         ? AppColors.danger
@@ -439,7 +439,7 @@ class HomePage extends StatelessWidget {
                 Text(
                   '${toPersianDigits((progress * 100).round())}٪',
                   style: const TextStyle(
-                    fontSize: 9,
+                    fontSize: 12,
                     color: AppColors.muted,
                   ),
                 ),
@@ -488,7 +488,7 @@ Future<void> _editProfile(BuildContext context, AppStore store) async {
                 const SizedBox(height: 6),
                 const Text(
                   'نامی که در صفحه اصلی نمایش داده می‌شود.',
-                  style: TextStyle(fontSize: 10, color: AppColors.muted),
+                  style: TextStyle(fontSize: 12, color: AppColors.muted),
                 ),
                 const SizedBox(height: 14),
                 TextFormField(

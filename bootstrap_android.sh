@@ -25,6 +25,7 @@ mkdir -p android/app/src/main/kotlin/ir/wearepulse/moed
 cp tooling/MainActivity.kt android/app/src/main/kotlin/ir/wearepulse/moed/MainActivity.kt
 cp tooling/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
 python3 tooling/patch_android.py
+bash tooling/ensure_vazirmatn.sh
 
 flutter pub get
 dart run flutter_launcher_icons

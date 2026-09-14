@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
@@ -44,12 +43,15 @@ class GlassBackground extends StatelessWidget {
     );
   }
 
-  Widget _orb(double size, Color color) => ImageFiltered(
-        imageFilter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
-        child: Container(
-          width: size,
-          height: size,
-          decoration: BoxDecoration(shape: BoxShape.circle, color: color),
+  Widget _orb(double size, Color color) => Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: RadialGradient(
+            colors: [color, color.withValues(alpha: 0)],
+            stops: const [.10, 1],
+          ),
         ),
       );
 }
@@ -74,11 +76,7 @@ class GlassCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = Theme.of(context).brightness == Brightness.dark;
-    final card = ClipRRect(
-      borderRadius: BorderRadius.circular(radius),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
+    final card = Container(
           padding: padding,
           decoration: BoxDecoration(
             gradient: gradient ??
@@ -104,8 +102,8 @@ class GlassCard extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: const Color(0xFF5B72A5).withValues(alpha: dark ? .08 : .075),
-                blurRadius: 30,
-                offset: const Offset(0, 12),
+                blurRadius: 14,
+                offset: const Offset(0, 6),
               ),
             ],
           ),
@@ -122,9 +120,7 @@ class GlassCard extends StatelessWidget {
               child: child,
             ),
           ),
-        ),
-      ),
-    );
+        );
     if (onTap == null) return card;
     return InkWell(
       borderRadius: BorderRadius.circular(radius),
@@ -158,8 +154,8 @@ class GradientButton extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: AppColors.blue.withValues(alpha: .22),
-                blurRadius: 22,
-                offset: const Offset(0, 10),
+                blurRadius: 14,
+                offset: const Offset(0, 6),
               ),
             ],
           ),

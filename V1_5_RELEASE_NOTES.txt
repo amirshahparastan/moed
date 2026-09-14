@@ -1,0 +1,7 @@
+Moed v1.5
+- Official Moed icon replaced with the approved navy/cyan/purple calendar/check/coins icon.
+- Android adaptive foreground regenerated with safe padding.
+- Web icon/favicon updated.
+- Includes v1.4 performance fixes: lightweight glass rendering, faster startup/theme switching, Vazirmatn build setup, larger readable UI typography.
+- Includes prior Android CI compatibility fixes.
+- No demo/sample financial data.

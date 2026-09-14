@@ -118,7 +118,7 @@ class RemindersPage extends StatelessWidget {
                         Text(
                           'قسط خودرو ۸ روز دیگر • ۱۲٬۵۰۰٬۰۰۰ تومان',
                           style: TextStyle(
-                            fontSize: 10,
+                            fontSize: 12,
                             color: Color(0xFF657694),
                           ),
                         ),
@@ -136,7 +136,7 @@ class RemindersPage extends StatelessWidget {
                 title: const Text('تنظیمات اعلان‌های سیستم'),
                 subtitle: const Text(
                   'اگر اعلان‌ها در Android بسته باشند از اینجا فعال کنید',
-                  style: TextStyle(fontSize: 9),
+                  style: TextStyle(fontSize: 12),
                 ),
                 onTap: store.notifications.openSettings,
               ),
@@ -161,7 +161,7 @@ class RemindersPage extends StatelessWidget {
             contentPadding: EdgeInsets.zero,
             value: value,
             title: Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
-            subtitle: Text(subtitle, style: const TextStyle(fontSize: 9, color: AppColors.muted)),
+            subtitle: Text(subtitle, style: const TextStyle(fontSize: 12, color: AppColors.muted)),
             onChanged: onChanged,
           ),
         ),

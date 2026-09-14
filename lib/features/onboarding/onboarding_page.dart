@@ -129,7 +129,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             const Text(
                               'اطلاعات اصلی شما روی دستگاه خودتان نگهداری می‌شود.',
                               textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 9, color: AppColors.muted),
+                              style: TextStyle(fontSize: 12, color: AppColors.muted),
                             ),
                           ],
                         ),
@@ -140,7 +140,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       BrandInfo.attribution,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 9,
+                        fontSize: 12,
                         fontWeight: FontWeight.w800,
                         color: AppColors.muted,
                       ),
@@ -179,7 +179,7 @@ class _FeaturePill extends StatelessWidget {
               text,
               style: const TextStyle(
                 color: AppColors.blue,
-                fontSize: 9,
+                fontSize: 12,
                 fontWeight: FontWeight.w800,
               ),
             ),

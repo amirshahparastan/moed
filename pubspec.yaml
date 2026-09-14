@@ -12,7 +12,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   provider: ^6.1.5+1
-  google_fonts: ^8.2.1
   sqflite: ^2.4.2+1
   path: ^1.9.1
   path_provider: ^2.1.6
@@ -41,6 +40,10 @@ flutter:
   assets:
     - assets/icon/app_icon.png
     - assets/icon/app_icon_foreground.png
+  fonts:
+    - family: Vazirmatn
+      fonts:
+        - asset: assets/fonts/Vazirmatn.ttf
 
 flutter_launcher_icons:
   android: true

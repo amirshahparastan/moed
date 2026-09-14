@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
   static const blue = Color(0xFF3478F6);
@@ -33,12 +32,21 @@ ThemeData buildTheme(Brightness brightness) {
       onSurface: mainText,
       onSurfaceVariant: secondaryText,
     ),
+    fontFamily: 'Vazirmatn',
     scaffoldBackgroundColor: dark ? const Color(0xFF10192A) : AppColors.surface,
   );
 
-  final textTheme = GoogleFonts.vazirmatnTextTheme(base.textTheme).apply(
+  final textTheme = base.textTheme.apply(
+    fontFamily: 'Vazirmatn',
     bodyColor: mainText,
     displayColor: mainText,
+  ).copyWith(
+    bodySmall: base.textTheme.bodySmall?.copyWith(fontFamily: 'Vazirmatn', fontSize: 12, height: 1.65),
+    bodyMedium: base.textTheme.bodyMedium?.copyWith(fontFamily: 'Vazirmatn', fontSize: 14, height: 1.65),
+    bodyLarge: base.textTheme.bodyLarge?.copyWith(fontFamily: 'Vazirmatn', fontSize: 16, height: 1.65),
+    labelSmall: base.textTheme.labelSmall?.copyWith(fontFamily: 'Vazirmatn', fontSize: 12),
+    labelMedium: base.textTheme.labelMedium?.copyWith(fontFamily: 'Vazirmatn', fontSize: 12),
+    labelLarge: base.textTheme.labelLarge?.copyWith(fontFamily: 'Vazirmatn', fontSize: 14),
   );
 
   return base.copyWith(
@@ -53,7 +61,8 @@ ThemeData buildTheme(Brightness brightness) {
       foregroundColor: mainText,
       iconTheme: IconThemeData(color: mainText),
       actionsIconTheme: IconThemeData(color: mainText),
-      titleTextStyle: GoogleFonts.vazirmatn(
+      titleTextStyle: TextStyle(
+        fontFamily: 'Vazirmatn',
         color: mainText,
         fontSize: 19,
         fontWeight: FontWeight.w800,
@@ -62,8 +71,8 @@ ThemeData buildTheme(Brightness brightness) {
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: dark ? Colors.white.withValues(alpha: .065) : Colors.white.withValues(alpha: .76),
-      labelStyle: GoogleFonts.vazirmatn(color: secondaryText),
-      hintStyle: GoogleFonts.vazirmatn(color: secondaryText),
+      labelStyle: TextStyle(color: secondaryText),
+      hintStyle: TextStyle(color: secondaryText),
       prefixIconColor: secondaryText,
       suffixIconColor: secondaryText,
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: BorderSide.none),
@@ -79,12 +88,12 @@ ThemeData buildTheme(Brightness brightness) {
     listTileTheme: ListTileThemeData(
       textColor: mainText,
       iconColor: dark ? const Color(0xFFDDE6F7) : AppColors.ink,
-      subtitleTextStyle: GoogleFonts.vazirmatn(color: secondaryText, fontSize: 10),
+      subtitleTextStyle: TextStyle(color: secondaryText, fontSize: 12),
     ),
     dialogTheme: DialogThemeData(
       backgroundColor: dark ? const Color(0xFF182235) : const Color(0xFFF9FBFF),
-      titleTextStyle: GoogleFonts.vazirmatn(color: mainText, fontSize: 18, fontWeight: FontWeight.w800),
-      contentTextStyle: GoogleFonts.vazirmatn(color: mainText),
+      titleTextStyle: TextStyle(color: mainText, fontSize: 18, fontWeight: FontWeight.w800),
+      contentTextStyle: TextStyle(color: mainText),
     ),
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: dark ? const Color(0xFF172134) : const Color(0xFFF9FBFF),
@@ -92,7 +101,7 @@ ThemeData buildTheme(Brightness brightness) {
     ),
     popupMenuTheme: PopupMenuThemeData(
       color: dark ? const Color(0xFF1A253A) : Colors.white,
-      textStyle: GoogleFonts.vazirmatn(color: mainText),
+      textStyle: TextStyle(color: mainText),
     ),
     segmentedButtonTheme: SegmentedButtonThemeData(
       style: ButtonStyle(
@@ -105,21 +114,21 @@ ThemeData buildTheme(Brightness brightness) {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: dark ? const Color(0xFF8AB4FF) : AppColors.blue,
-        textStyle: GoogleFonts.vazirmatn(fontWeight: FontWeight.w700),
+        textStyle: TextStyle(fontWeight: FontWeight.w700),
       ),
     ),
     filledButtonTheme: FilledButtonThemeData(
       style: FilledButton.styleFrom(
         foregroundColor: Colors.white,
-        textStyle: GoogleFonts.vazirmatn(fontWeight: FontWeight.w800),
+        textStyle: TextStyle(fontWeight: FontWeight.w800),
       ),
     ),
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: Colors.transparent,
       indicatorColor: AppColors.blue.withValues(alpha: .10),
       labelTextStyle: WidgetStateProperty.resolveWith<TextStyle?>((states) {
-        return GoogleFonts.vazirmatn(
-          fontSize: 10,
+        return TextStyle(fontFamily: 'Vazirmatn', 
+          fontSize: 12,
           fontWeight: states.contains(WidgetState.selected) ? FontWeight.w800 : FontWeight.w500,
           color: states.contains(WidgetState.selected) ? AppColors.blue : secondaryText,
         );

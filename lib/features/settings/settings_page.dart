@@ -172,12 +172,12 @@ class SettingsPage extends StatelessWidget {
                   Text(
                     BrandInfo.attribution,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.w900),
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900),
                   ),
                   SizedBox(height: 4),
                   Text(
                     'نسخه ${BrandInfo.appVersion}',
-                    style: TextStyle(fontSize: 8, color: AppColors.muted),
+                    style: TextStyle(fontSize: 12, color: AppColors.muted),
                   ),
                 ],
               ),
@@ -197,7 +197,7 @@ class SettingsPage extends StatelessWidget {
   ) => Expanded(
         child: InkWell(
           borderRadius: BorderRadius.circular(18),
-          onTap: () => store.setSettings(settings.copyWith(themeMode: mode)),
+          onTap: () => store.setThemeMode(mode),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 180),
             padding: const EdgeInsets.symmetric(vertical: 13),
@@ -220,7 +220,7 @@ class SettingsPage extends StatelessWidget {
                 Text(
                   label,
                   style: TextStyle(
-                    fontSize: 9,
+                    fontSize: 12,
                     fontWeight: FontWeight.w800,
                     color: settings.themeMode == mode ? AppColors.blue : AppColors.muted,
                   ),
@@ -263,7 +263,7 @@ class SettingsPage extends StatelessWidget {
                       subtitle,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(fontSize: 9, color: AppColors.muted),
+                      style: const TextStyle(fontSize: 12, color: AppColors.muted),
                     ),
                   ],
                 ),

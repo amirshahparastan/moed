@@ -14,3 +14,5 @@ android/key.properties
 *.keystore
 __pycache__/
 *.pyc
+assets/fonts/*.ttf
+assets/fonts/*.otf

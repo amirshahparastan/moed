@@ -70,7 +70,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                         Text('ابزار هوشمند موعد', style: TextStyle(fontWeight: FontWeight.w900)),
                         Text(
                           'افق ۳۰ روزه، نقطه عطف پرداخت و سناریوی تسویه سریع‌تر',
-                          style: TextStyle(fontSize: 9, color: AppColors.muted),
+                          style: TextStyle(fontSize: 12, color: AppColors.muted),
                         ),
                       ],
                     ),
@@ -86,7 +86,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                 children: [
                   const Text(
                     'مجموع پرداخت این ماه',
-                    style: TextStyle(fontSize: 10, color: AppColors.muted),
+                    style: TextStyle(fontSize: 12, color: AppColors.muted),
                   ),
                   const SizedBox(height: 5),
                   Text(
@@ -148,7 +148,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                                                     compactMoney(m.amount),
                                                     maxLines: 1,
                                                     style: const TextStyle(
-                                                      fontSize: 8,
+                                                      fontSize: 12,
                                                       fontWeight: FontWeight.w800,
                                                       color: AppColors.ink,
                                                     ),
@@ -193,7 +193,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                                             m.label,
                                             maxLines: 1,
                                             style: const TextStyle(
-                                              fontSize: 8,
+                                              fontSize: 12,
                                               color: AppColors.muted,
                                             ),
                                           ),
@@ -289,7 +289,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                         '• $s',
                         style: const TextStyle(
                           color: Color(0xFF657694),
-                          fontSize: 10,
+                          fontSize: 12,
                           height: 1.7,
                         ),
                       ),
@@ -323,7 +323,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             const SizedBox(height: 4),
             Text(
               title,
-              style: const TextStyle(fontSize: 9, color: AppColors.muted),
+              style: const TextStyle(fontSize: 12, color: AppColors.muted),
             ),
           ],
         ),

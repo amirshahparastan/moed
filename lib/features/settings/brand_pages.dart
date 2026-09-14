@@ -28,7 +28,7 @@ class AboutMoedPage extends StatelessWidget {
               Text(
                 BrandInfo.productLine,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 11, color: AppColors.muted),
+                style: TextStyle(fontSize: 12, color: AppColors.muted),
               ),
               SizedBox(height: 12),
               _BrandPill(text: 'محصولی از PULSE — پالس'),
@@ -36,12 +36,12 @@ class AboutMoedPage extends StatelessWidget {
               Text(
                 'توسعه و طراحی محصول: ${BrandInfo.developerName}',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 10, color: AppColors.muted),
+                style: TextStyle(fontSize: 12, color: AppColors.muted),
               ),
               SizedBox(height: 4),
               Text(
                 'نسخه ${BrandInfo.appVersion}',
-                style: TextStyle(fontSize: 9, color: AppColors.muted),
+                style: TextStyle(fontSize: 12, color: AppColors.muted),
               ),
             ],
           ),
@@ -74,7 +74,7 @@ class AboutMoedPage extends StatelessWidget {
                     Text('PULSE', style: TextStyle(fontWeight: FontWeight.w900)),
                     Text(
                       'wearepulse.ir',
-                      style: TextStyle(fontSize: 9, color: AppColors.muted),
+                      style: TextStyle(fontSize: 12, color: AppColors.muted),
                     ),
                   ],
                 ),
@@ -228,7 +228,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                     Text('ارتباط مستقیم با PULSE', style: TextStyle(fontWeight: FontWeight.w900)),
                     Text(
                       BrandInfo.feedbackEmail,
-                      style: TextStyle(fontSize: 9, color: AppColors.muted),
+                      style: TextStyle(fontSize: 12, color: AppColors.muted),
                     ),
                   ],
                 ),
@@ -324,7 +324,7 @@ class _InfoCard extends StatelessWidget {
                   const SizedBox(height: 5),
                   Text(
                     body,
-                    style: const TextStyle(fontSize: 10, color: AppColors.muted, height: 1.85),
+                    style: const TextStyle(fontSize: 12, color: AppColors.muted, height: 1.85),
                   ),
                 ],
               ),
@@ -349,7 +349,7 @@ class _BrandPill extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: const TextStyle(color: AppColors.blue, fontSize: 10, fontWeight: FontWeight.w900),
+          style: const TextStyle(color: AppColors.blue, fontSize: 12, fontWeight: FontWeight.w900),
         ),
       );
 }
