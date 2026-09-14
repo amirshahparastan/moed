@@ -1,0 +1,11 @@
+Moed v1.4 performance / font / readability fix
+
+Changes:
+- Vazirmatn is bundled into Android/Web builds instead of runtime GoogleFonts fetching.
+- Source ZIP intentionally does not contain raw font files; build/run helper fetches the official font.
+- Removed expensive BackdropFilter/ImageFilter blur from glass cards/background decorations.
+- Preserved liquid-glass visual language with lightweight gradients, transparency, borders and softer shadows.
+- Theme mode applies immediately and no longer waits for notification rescheduling.
+- Notification/timezone initialization no longer blocks initial app paint.
+- Tiny 8/9/10px UI labels raised to readable 11/12px minimums.
+- No demo/sample financial data added.

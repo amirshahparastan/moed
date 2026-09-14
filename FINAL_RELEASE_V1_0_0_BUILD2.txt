@@ -1,0 +1,14 @@
+Moed 1.0.0+2 — final publication candidate
+
+Final changes:
+- Official Moed icon retained.
+- Android adaptive icon background changed from light/white to deep navy (#0B1E46).
+- Adaptive foreground enlarged for better launcher visibility while staying inside the Android safe zone.
+- Version/build bumped to 1.0.0+2 for store publication.
+- Includes performance/startup/theme/font/readability fixes from previous release.
+- Includes Android CI compatibility fixes.
+- Fresh install contains no demo/sample financial data.
+
+Publication note:
+- Test APK can be built from Android Test Build.
+- Signed APK/AAB should be produced through Android Signed Release after keystore secrets are configured.

@@ -1,0 +1,16 @@
+Moed V1 - GitHub / Android test package
+
+Approved launcher icon installed:
+- Android legacy launcher: assets/icon/app_icon.png
+- Android adaptive foreground: assets/icon/app_icon_foreground.png
+- Web Icon-192 / Icon-512 / favicon updated
+
+flutter_launcher_icons is already configured.
+During bootstrap_android.sh / GitHub Actions, launcher assets are generated automatically.
+
+Brand:
+PULSE
+Developer: Amirmohammad Shahparastan
+Support: info@wearepulse.ir
+Package id: ir.wearepulse.moed
+Version: 1.0.0+1

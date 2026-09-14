@@ -1,0 +1,10 @@
+Moed CI fix v1.2
+
+Fixed for current dependency APIs:
+- file_picker 11.x: FilePicker.pickFiles() static API
+- PDF render bytes: Uint8List return type
+- local_auth 3.x: removed AuthenticationOptions; uses direct parameters
+- flutter_timezone 5.x: TimezoneInfo.identifier
+- removed stale widget_test.dart referencing MyApp
+
+No demo financial data is included.

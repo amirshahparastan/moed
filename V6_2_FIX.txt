@@ -1,0 +1,2 @@
+Moed Clean V6.2
+Fix: replaced unsupported Icons.event_upcoming_rounded with Icons.calendar_month_rounded in home_page.dart and smart_tools_page.dart.
